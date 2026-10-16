@@ -1,18 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
-  CheckCircle2, 
-  Globe, 
-  ShieldAlert, 
-  MessageSquare 
-} from "lucide-react";
-import WhiteLogoBadge from "@/components/WhiteLogoBadge";
+import Link from "next/link";
 import confetti from "canvas-confetti";
 
 const globalDesks = [
@@ -67,204 +56,214 @@ export default function ContactPage() {
     setTimeout(() => {
       setSubmitting(false);
       setSent(true);
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        colors: ["#D4AF37", "#ffffff", "#00B4D8"],
-      });
-    }, 600);
+      try {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          colors: ["#d4af37", "#ffffff", "#080a0c"],
+        });
+      } catch (err) {}
+    }, 500);
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#050811] text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
-      
+    <div style={{ background: "#080a0c", paddingBottom: "120px" }}>
       {/* Header */}
-      <div className="max-w-7xl mx-auto w-full mb-16 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-mono tracking-widest uppercase mb-2">
-          <span>Global Production & Advisory Desks</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight">
+      <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
+        <p className="eyebrow" style={{ justifyContent: "center" }}>
+          <span>// 05</span>GLOBAL DESK
+        </p>
+        <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           Connect with ORBITZ Concierge
         </h1>
-        <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg">
-          Direct coordinates for our executive producers, media buying strategists, and crisis communications directors.
+        <p style={{ maxWidth: "620px", margin: "0 auto", fontSize: "16px", color: "var(--muted)", lineHeight: "1.7" }}>
+          Direct coordinates for our executive producers, media buying strategists, and crisis communications directors worldwide.
         </p>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      {/* Main Grid */}
+      <div className="wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "60px" }}>
         
-        {/* Left Column: Direct Message Box */}
-        <div className="lg:col-span-7 glass-panel-elevated rounded-3xl p-6 sm:p-10 border border-white/10 space-y-6">
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-amber-400">Direct Inquiries</span>
-              <h2 className="text-2xl font-heading font-bold text-white mt-1">Transmitting Direct Dispatch</h2>
-            </div>
-            <WhiteLogoBadge size="xs" showText={false} withLink={false} />
+        {/* Left: Contact Form on Cream Card */}
+        <div style={{ background: "#e8e4e0", color: "#080a0c", borderRadius: "3px", padding: "clamp(24px, 4vw, 44px)", boxShadow: "0 25px 60px rgba(0,0,0,0.4)" }}>
+          <div style={{ font: "10px var(--mono)", letterSpacing: "1.5px", textTransform: "uppercase", color: "#555850", marginBottom: "12px" }}>
+            DIRECT TRANSMISSION DESK
           </div>
+          <h2 style={{ fontFamily: "var(--serif)", fontSize: "32px", marginBottom: "14px", color: "#080a0c" }}>
+            Send a Priority Message
+          </h2>
+          <p style={{ color: "#4a4d46", fontSize: "14px", lineHeight: "1.7", marginBottom: "28px" }}>
+            Monitored 24/7 by our partner duty officer. Confidentiality is assured under mutual NDA.
+          </p>
 
           {sent ? (
-            <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in-95">
-              <div className="w-14 h-14 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-7 h-7" />
+            <div style={{ padding: "30px 10px", textAlign: "center" }}>
+              <div style={{ width: "50px", height: "50px", borderRadius: "50%", background: "#080a0c", color: "var(--gold)", display: "inline-grid", placeItems: "center", fontSize: "20px", marginBottom: "16px" }}>
+                ✓
               </div>
-              <h3 className="text-2xl font-heading font-bold text-white">Message Dispatched</h3>
-              <p className="text-slate-300 text-sm max-w-md mx-auto">
-                Thank you, {formData.name}. Your correspondence has been routed to the {formData.desk} Executive Desk. We will review and respond promptly.
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "24px", color: "#080a0c", marginBottom: "8px" }}>
+                Transmission Received
+              </h3>
+              <p style={{ color: "#555", fontSize: "14px", marginBottom: "20px" }}>
+                Our senior coordinator will reply within 4 business hours.
               </p>
               <button
+                type="button"
                 onClick={() => setSent(false)}
-                className="mt-4 px-6 py-2.5 rounded-full bg-white/10 text-white text-xs font-mono hover:bg-white/20 transition-colors"
+                style={{ background: "transparent", border: "none", borderBottom: "1px solid #777a75", cursor: "pointer", fontSize: "13px" }}
               >
                 Send Another Dispatch
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Elena Rostova"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400/60 text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1">
-                    Corporate Email *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="elena@rostovagroup.com"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400/60 text-sm"
-                  />
-                </div>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div>
+                <label style={{ display: "block", font: "10px var(--mono)", letterSpacing: "1px", marginBottom: "6px", color: "#444" }}>
+                  YOUR NAME *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="e.g. Elena Vance"
+                  style={{ width: "100%", padding: "14px 16px", background: "#ffffff", border: "none", borderRadius: "2px", fontSize: "14px", color: "#080a0c" }}
+                />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label style={{ display: "block", font: "10px var(--mono)", letterSpacing: "1px", marginBottom: "6px", color: "#444" }}>
+                  EMAIL ADDRESS *
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="e.g. elena@vanceholdings.com"
+                  style={{ width: "100%", padding: "14px 16px", background: "#ffffff", border: "none", borderRadius: "2px", fontSize: "14px", color: "#080a0c" }}
+                />
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1">
-                    Nature of Inquiry
-                  </label>
-                  <select
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#090e21] border border-white/10 text-white focus:outline-none focus:border-amber-400/60 text-sm"
-                  >
-                    <option value="Documentary Commission">Documentary Commission</option>
-                    <option value="Media Buying Mandate">Media Buying Mandate</option>
-                    <option value="PR & Crisis Advisory">PR & Crisis Advisory</option>
-                    <option value="Event Production">Event Production</option>
-                    <option value="Press & Speaking Request">Press & Speaking Request</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1">
-                    Preferred Bureau Desk
+                  <label style={{ display: "block", font: "10px var(--mono)", letterSpacing: "1px", marginBottom: "6px", color: "#444" }}>
+                    NEAREST DESK
                   </label>
                   <select
                     value={formData.desk}
                     onChange={(e) => setFormData({ ...formData, desk: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#090e21] border border-white/10 text-white focus:outline-none focus:border-amber-400/60 text-sm"
+                    style={{ width: "100%", padding: "14px 16px", background: "#ffffff", border: "none", borderRadius: "2px", fontSize: "14px", color: "#080a0c" }}
                   >
-                    <option value="London">London (UK & Europe)</option>
-                    <option value="Lagos">Lagos (West Africa & Pan-Africa)</option>
-                    <option value="Dubai">Dubai (Middle East & GCC)</option>
-                    <option value="New York">New York (North America)</option>
+                    <option value="London">London Mayfair</option>
+                    <option value="Dubai">Dubai DIFC</option>
+                    <option value="Lagos">Lagos VI</option>
+                    <option value="New York">New York WTC</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style={{ display: "block", font: "10px var(--mono)", letterSpacing: "1px", marginBottom: "6px", color: "#444" }}>
+                    NATURE OF INQUIRY
+                  </label>
+                  <select
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    style={{ width: "100%", padding: "14px 16px", background: "#ffffff", border: "none", borderRadius: "2px", fontSize: "14px", color: "#080a0c" }}
+                  >
+                    <option value="Documentary Production">Documentary Production</option>
+                    <option value="Media Buying">Media Buying</option>
+                    <option value="PR & Crisis">PR & Crisis</option>
+                    <option value="Live Event Broadcast">Live Event Broadcast</option>
+                    <option value="General Concierge">General Concierge</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1">
-                  Message & Context *
+                <label style={{ display: "block", font: "10px var(--mono)", letterSpacing: "1px", marginBottom: "6px", color: "#444" }}>
+                  TRANSMISSION DETAIL *
                 </label>
                 <textarea
                   required
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Outline key background details, project dates, or press timelines..."
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400/60 text-sm resize-none"
+                  placeholder="Outline your inquiry, timeline, or broadcast requirement..."
+                  style={{ width: "100%", padding: "14px 16px", background: "#ffffff", border: "none", borderRadius: "2px", fontSize: "14px", color: "#080a0c", resize: "vertical" }}
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 text-slate-950 font-heading font-bold text-sm hover:from-amber-200 hover:to-amber-400 transition-all shadow-xl shadow-amber-500/20 flex items-center justify-center gap-2"
+                className="button"
+                style={{ width: "100%", background: "#080a0c", color: "#ffffff", justifyContent: "space-between", marginTop: "8px" }}
               >
-                {submitting ? (
-                  <span>Transmitting...</span>
-                ) : (
-                  <>
-                    <span>Transmit to ORBITZ Executive Desk</span>
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
+                <span>{submitting ? "TRANSMITTING..." : "DISPATCH DISPATCH TO PARTNERS"}</span>
+                <span style={{ color: "var(--gold-accent)" }}>↗</span>
               </button>
             </form>
           )}
         </div>
 
-        {/* Right Column: Global Desks & Crisis Alert */}
-        <div className="lg:col-span-5 space-y-6">
-          
-          {/* Rapid Crisis Hotline Card */}
-          <div className="p-6 rounded-3xl bg-amber-500/10 border border-amber-500/30 text-amber-200 space-y-3">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400">
-              <ShieldAlert className="w-4 h-4" />
-              <span>Priority 24/7 Crisis Response</span>
-            </div>
-            <h3 className="text-lg font-heading font-bold text-white">
-              High-Stakes Breaking Event or PR Emergency?
-            </h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              For active hostile media exposure or immediate broadcast incident control, mark your message subject as &ldquo;URGENT CRISIS&rdquo; or contact our direct hotline.
+        {/* Right: Global Desks Directory */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+          <div>
+            <p className="eyebrow">
+              <span>// DIRECTORIES</span>
+              GLOBAL HUBS
             </p>
-            <div className="text-xs font-mono text-amber-300 font-semibold pt-1">
-              HOTLINE: +44 20 7946 0899 (ENTERPRISE ONLY)
-            </div>
+            <h2 style={{ fontFamily: "var(--serif)", fontSize: "36px", marginBottom: "24px" }}>
+              Our International Bureaus
+            </h2>
           </div>
 
-          {/* Bureau Cards */}
-          <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400">
-              International Desks
-            </h3>
-
-            {globalDesks.map((d) => (
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {globalDesks.map((desk) => (
               <div
-                key={d.city}
-                className="glass-panel p-5 rounded-2xl border border-white/10 space-y-2 hover:border-amber-400/30 transition-colors"
+                key={desk.city}
+                style={{
+                  borderTop: "1px solid var(--line)",
+                  paddingTop: "20px",
+                }}
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-heading font-bold text-white text-base">{d.city}</span>
-                  <span className="text-[11px] font-mono text-amber-400">{d.timezone}</span>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "6px" }}>
+                  <h3 style={{ fontFamily: "var(--serif)", fontSize: "24px", margin: 0, color: "var(--gold)" }}>
+                    {desk.city}
+                  </h3>
+                  <span style={{ font: "10px var(--mono)", color: "#888", letterSpacing: "1px" }}>
+                    {desk.timezone}
+                  </span>
                 </div>
-                <p className="text-xs text-slate-400">{d.role}</p>
-                <p className="text-xs text-slate-300 font-mono">{d.address}</p>
-                <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-white/5 font-mono">
-                  <span>{d.tel}</span>
-                  <span className="text-amber-300">{d.email}</span>
+                <div style={{ font: "12px var(--sans)", color: "#ccc", marginBottom: "8px" }}>
+                  {desk.role}
+                </div>
+                <div style={{ font: "13px var(--sans)", color: "var(--muted)", lineHeight: "1.6" }}>
+                  {desk.address}
+                </div>
+                <div style={{ font: "12px var(--mono)", color: "var(--gold-accent)", marginTop: "8px" }}>
+                  TEL: {desk.tel} • EMAIL: {desk.email}
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Rapid Quiz Link */}
+          <div style={{ background: "#0d0f12", padding: "28px", borderRadius: "2px", border: "1px solid rgba(255,255,255,0.08)", marginTop: "12px" }}>
+            <div style={{ font: "10px var(--mono)", letterSpacing: "1.5px", color: "var(--gold)", marginBottom: "8px" }}>
+              FAST-TRACK SCOPING
+            </div>
+            <p style={{ fontSize: "14px", color: "var(--muted)", margin: "0 0 16px" }}>
+              Prefer to answer 2 quick multiple choice questions to configure a production quote?
+            </p>
+            <Link className="button gold small-button" href="/inquiry">
+              Launch 2-Question Scoping <span>↗</span>
+            </Link>
+          </div>
         </div>
 
       </div>
-
     </div>
   );
 }

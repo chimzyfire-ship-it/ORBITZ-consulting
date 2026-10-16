@@ -1,60 +1,51 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplashScreen from "@/components/SplashScreen";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-serif",
+  weight: ["400", "600", "700", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050811",
+  themeColor: "#080a0c",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
 export const metadata: Metadata = {
-  title: "ORBITZ Consulting Ltd | Media Productions, Buying, PR & Events Management",
-  description: "ORBITZ Consulting Ltd is an elite media consultancy and creative production house bridging cinematic documentary production, programmatic media buying, high-stakes PR, and broadcast-grade events.",
+  title: "Build your narrative. We command your broadcast. | ORBITZ Consulting Ltd",
+  description: "ORBITZ Consulting Ltd creates, executes, and broadcasts cinematic documentary productions, programmatic media buying, strategic PR, and world-class live events.",
   keywords: [
     "ORBITZ Consulting Ltd",
-    "Media Productions",
     "Documentary Production",
     "Media Buying",
     "Public Relations",
     "Events Management",
-    "Broadcast Production",
-    "Media Strategy"
+    "Broadcast Productions"
   ],
   authors: [{ name: "ORBITZ Consulting Ltd" }],
-  openGraph: {
-    title: "ORBITZ Consulting Ltd — Elite Media Productions & Strategic Advisory",
-    description: "Cinematic documentary production, omnichannel media buying, strategic PR, and world-class live events management.",
-    siteName: "ORBITZ Consulting Ltd",
-    images: [
-      {
-        url: "/assets/logo.png",
-        width: 1277,
-        height: 1232,
-        alt: "ORBITZ Consulting Ltd Logo",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
   icons: {
     icon: "/assets/logo.png",
     apple: "/assets/logo.png",
@@ -67,13 +58,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${plusJakarta.variable} ${inter.variable} antialiased bg-[#050811] text-slate-100 min-h-screen selection:bg-amber-400 selection:text-slate-950 flex flex-col font-sans`}
+        className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable} antialiased bg-[#080a0c] text-[#f7f5ef] min-h-screen flex flex-col`}
+        style={{ fontFamily: "var(--font-sans), Arial, sans-serif" }}
       >
         <SplashScreen />
         <Navbar />
-        <main className="flex-1 flex flex-col relative z-10">{children}</main>
+        <main id="main" className="flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

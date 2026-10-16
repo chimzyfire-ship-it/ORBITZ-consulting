@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-echo "📦 Staging and pushing configuration update to GitHub..."
+echo "📦 Staging and pushing full redesign to GitHub..."
 git add -A
-git commit -m "fix: next.config.mjs build settings for vercel" || true
+git commit -m "feat: complete redesign matching reference site with borderless assets, splash screen, and luxury editorial style" || true
 git push origin main || true
 
 echo "⚡ Deploying to Vercel Production..."

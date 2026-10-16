@@ -1,133 +1,61 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone, MapPin, ShieldCheck, Film, Globe } from "lucide-react";
-import WhiteLogoBadge from "./WhiteLogoBadge";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#04060d] border-t border-white/10 text-slate-300 pt-16 pb-12 overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-amber-500/5 blur-[120px] pointer-events-none" />
+    <footer className="footer" role="contentinfo">
+      <div className="wrap footer-top">
+        <div>
+          {/* Sacred White Background Logo Island */}
+          <Link className="brand" href="/" aria-label="ORBITZ Consulting Ltd">
+            <img
+              className="brand-logo"
+              src="/assets/logo.png"
+              alt="ORBITZ Consulting Ltd"
+              style={{ width: "auto", height: "36px", objectFit: "contain" }}
+            />
+          </Link>
+          <p style={{ marginTop: "24px", maxWidth: "340px", fontSize: "14px", lineHeight: "1.7", color: "var(--muted)" }}>
+            ORBITZ Consulting Ltd is an elite media consultancy and broadcast production powerhouse. We engineer high-stakes narrative documentaries, programmatic media buying operations, global PR campaigns, and unforgettable immersive summits.
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Brand Info & Sacred White Logo Badge */}
-          <div className="lg:col-span-2 space-y-5">
-            <div>
-              <WhiteLogoBadge size="md" showText={true} />
-            </div>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              ORBITZ Consulting Ltd is a premier media consultancy and broadcast production powerhouse. We engineer high-stakes narrative documentaries, programmatic media buying operations, global PR campaigns, and unforgettable immersive summits.
-            </p>
-            <div className="flex items-center gap-3 text-xs text-amber-300 font-mono tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>ACTIVE PRODUCTION DESK • ACCEPTING Q3/Q4 COMMISSIONS</span>
-            </div>
+        <div>
+          <div style={{ font: "10px var(--mono)", letter-spacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
+            The Practices
           </div>
-
-          {/* Practice Areas */}
-          <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-slate-400">
-              Practice Areas
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/services#documentary" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>Documentary Production</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#media-buying" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>Media Buying & Ad Ops</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#pr-comms" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>PR & Strategic Comms</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#events" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>Events & Live Broadcast</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#advisory" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>Executive Media Advisory</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Access */}
-          <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-slate-400">
-              Company & Works
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/about" className="hover:text-amber-400 transition-colors">
-                  About ORBITZ
-                </Link>
-              </li>
-              <li>
-                <Link href="/work" className="hover:text-amber-400 transition-colors">
-                  Featured Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/inquiry" className="hover:text-amber-400 transition-colors text-amber-300 font-medium flex items-center gap-1">
-                  <span>Interactive Inquiry</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-amber-400 transition-colors">
-                  Concierge & Press Desk
-                </Link>
-              </li>
-              <li>
-                <Link href="/about#standards" className="hover:text-amber-400 transition-colors">
-                  Broadcast Standards
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Global Operations */}
-          <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-slate-400">
-              Global Desks
-            </h4>
-            <div className="space-y-3 text-xs text-slate-400">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>London • Lagos • Dubai • New York</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>inquiries@orbitzconsulting.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>24/7 Rapid Crisis & Broadcast Dispatch</span>
-              </div>
-            </div>
+          <div className="footer-links">
+            <Link href="/services#documentary">Documentary Production</Link>
+            <Link href="/services#media-buying">Media Buying & Ad Ops</Link>
+            <Link href="/services#pr-comms">PR & Strategic Comms</Link>
+            <Link href="/services#events">Live Broadcast & Summits</Link>
+            <Link href="/services#advisory">Executive Advisory</Link>
+            <Link href="/work">Selected Works</Link>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© 2026 ORBITZ Consulting Ltd. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>Broadcast-Grade 4K/8K Standards</span>
-            <span>•</span>
-            <span>Omnichannel Ad Intelligence</span>
-            <span>•</span>
-            <span>Global PR Bureau</span>
+        <div>
+          <div style={{ font: "10px var(--mono)", letter-spacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
+            Operations & Desk
+          </div>
+          <div className="footer-links">
+            <Link href="/about">The Firm Philosophy</Link>
+            <Link href="/inquiry">Interactive Inquiry</Link>
+            <Link href="/contact">Concierge Desk</Link>
+            <Link href="/contact#london">London HQ</Link>
+            <Link href="/contact#dubai">Dubai Studio</Link>
+            <Link href="/contact#lagos">Lagos Desk</Link>
           </div>
         </div>
+      </div>
+
+      <div className="wrap footer-bottom">
+        <span>© 2026 ORBITZ CONSULTING LTD. ALL RIGHTS RESERVED.</span>
+        <div>
+          <Link href="/contact">TERMS</Link>
+          <Link href="/contact">PRIVACY</Link>
+          <Link href="/contact">NDA ASSURANCE</Link>
+        </div>
+        <span className="hidden sm:inline">STRICT ENTERPRISE CONFIDENTIALITY</span>
       </div>
     </footer>
   );

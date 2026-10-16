@@ -1,18 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  ShieldCheck, 
-  Film, 
-  Award, 
-  Globe2, 
-  ArrowUpRight, 
-  CheckCircle2, 
-  Sparkles,
-  Target,
-  Compass,
-  Cpu
-} from "lucide-react";
-import WhiteLogoBadge from "@/components/WhiteLogoBadge";
 
 export const metadata = {
   title: "About the Firm & Leadership | ORBITZ Consulting Ltd",
@@ -21,184 +8,139 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col w-full bg-[#050811] text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
-      
+    <div style={{ background: "#080a0c", paddingBottom: "120px" }}>
       {/* Header */}
-      <div className="max-w-7xl mx-auto w-full mb-16 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-mono tracking-widest uppercase mb-2">
-          <span>Institutional Ethos</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight">
+      <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
+        <p className="eyebrow" style={{ justifyContent: "center" }}>
+          <span>// 04</span>THE FIRM DOCTRINE
+        </p>
+        <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           About ORBITZ Consulting Ltd
         </h1>
-        <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg">
-          An elite media consultancy and creative production house bridging cinematic documentary artistry with high-impact strategic communications.
+        <p style={{ maxWidth: "620px", margin: "0 auto", fontSize: "16px", color: "var(--muted)", lineHeight: "1.7" }}>
+          An elite media consultancy and creative production house bridging cinematic documentary artistry with high-impact strategic communications and quantitative media power.
         </p>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto w-full space-y-24">
-
-        {/* Narrative & Philosophy */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-              Our Founding Thesis
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white leading-tight">
+      {/* Narrative Section */}
+      <section className="wrap section" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "60px", alignItems: "center" }}>
+          <div>
+            <p className="eyebrow">
+              <span>01 // THE THESIS</span>
+              NARRATIVE AS POWER
+            </p>
+            <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(32px, 3.8vw, 48px)", marginBottom: "20px" }}>
               Every Frame is Strategy. <br />
-              <span className="text-gradient-gold">Every Placement is Power.</span>
+              <em>Every Placement is Power.</em>
             </h2>
-            <div className="space-y-4 text-slate-300 text-base leading-relaxed">
-              <p>
-                In an era of relentless algorithmic saturation, noise is cheap. True cultural gravity and institutional influence require two elements that rarely exist under one roof: <strong>cinema-grade narrative craft</strong> and <strong>ruthless, programmatic media distribution</strong>.
-              </p>
-              <p>
-                ORBITZ Consulting Ltd was founded to resolve this divide. We refuse to treat documentaries merely as marketing collateral, and we refuse to treat media buying as vanity reach. We build films that move human hearts and ad campaigns that capture tangible market share.
-              </p>
-              <p>
-                From boardrooms in Mayfair and DIFC to production soundstages in Lagos and post-production suites in New York, ORBITZ operates as a trusted partner to sovereign funds, industry titans, and visionary leaders.
-              </p>
-            </div>
+            <p style={{ color: "#f7f5ef", fontSize: "16px", lineHeight: "1.8", marginBottom: "18px" }}>
+              In an era of relentless algorithmic saturation, noise is cheap. True cultural gravity and institutional influence require two elements that rarely exist under one roof: <b>cinema-grade narrative craft</b> and <b>ruthless, programmatic media distribution</b>.
+            </p>
+            <p style={{ color: "var(--muted)", fontSize: "15px", lineHeight: "1.8", marginBottom: "28px" }}>
+              ORBITZ Consulting Ltd was founded to resolve this divide. We refuse to treat documentaries merely as marketing collateral, and we refuse to treat media buying as vanity reach. We build films that move human hearts and ad campaigns that capture tangible market share.
+            </p>
+            <Link className="button" href="/services">
+              Explore Enterprise Practices <span>↗</span>
+            </Link>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="glass-panel-elevated rounded-3xl p-3 border border-white/15">
-              <div className="relative h-80 sm:h-[480px] w-full rounded-2xl overflow-hidden">
-                <Image
-                  src="/assets/executive-consultant.jpg"
-                  alt="ORBITZ Consulting Managing Partner at Executive Desk"
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050811] via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-slate-300 flex justify-between items-center">
-                  <div>
-                    <span className="text-white font-bold block text-sm">Managing Partner & Head of Strategy</span>
-                    <span className="text-amber-400">ORBITZ CONSULTING LTD</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="block text-slate-400">GLOBAL OPERATIONS</span>
-                    <span className="text-slate-200">UK • NGA • UAE • USA</span>
-                  </div>
-                </div>
-              </div>
+          <figure className="hero-photo" style={{ transform: "rotate(2deg)", margin: "0 auto", width: "100%", maxWidth: "520px" }}>
+            <Image
+              src="/assets/executive-consultant.jpg"
+              alt="ORBITZ Consulting Managing Partner"
+              width={800}
+              height={1000}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            <div className="portrait-caption">
+              <span>EXECUTIVE DESK // ORBITZ 04</span>
+              <strong>Managing Partner & Strategy Directorate</strong>
             </div>
-          </div>
-        </section>
+          </figure>
+        </div>
+      </section>
 
-        {/* Core Values */}
-        <section className="space-y-10">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-              Operating Principles
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white">
-              The Principles That Govern Our Craft
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 space-y-4">
-              <div className="p-3 rounded-2xl bg-amber-400/10 text-amber-300 border border-amber-400/20 w-fit">
-                <Film className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-white">Uncompromising Cinema</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                We do not cut corners on glass, lighting, or sound. Every documentary is captured on large-format cinema cameras and mixed in multi-channel Atmos to ensure permanent prestige.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 space-y-4">
-              <div className="p-3 rounded-2xl bg-amber-400/10 text-amber-300 border border-amber-400/20 w-fit">
-                <Target className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-white">Algorithmic Precision</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Our media buying desks operate with surgical intelligence. Every dollar of ad spend is tracked through real-time telemetry, ensuring maximum conversion and zero waste.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 space-y-4">
-              <div className="p-3 rounded-2xl bg-amber-400/10 text-amber-300 border border-amber-400/20 w-fit">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-white">Reputation Sanctuary</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Trust is fragile. We enforce absolute discretion, rigorous compliance, and 24/7 crisis monitoring to shield our clients from market volatility and PR exposure.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Technical & Broadcast Standards */}
-        <section id="standards" className="glass-panel-elevated rounded-3xl p-8 sm:p-12 border border-white/15 space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-6">
+      {/* CREAM SECTION: OPERATING PRINCIPLES */}
+      <section className="cream section">
+        <div className="wrap">
+          <div className="section-heading horizontal">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-                Technical Specifications
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mt-1">
-                Broadcast & Delivery Standards
-              </h3>
+              <p className="eyebrow">
+                <span>// 02</span>OPERATING DOCTRINE
+              </p>
+              <h2>The Principles That Govern Our Craft</h2>
             </div>
-            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>SMPTE & DCI-P3 CERTIFIED PIPELINES</span>
-            </div>
+            <p>
+              Non-negotiable operational benchmarks upheld across every shoot, media buy, and crisis briefing.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-              <span className="text-xs font-mono text-amber-400">01 / RESOLUTION</span>
-              <h4 className="font-heading font-semibold text-white">4K / 8K RAW Cinema</h4>
-              <p className="text-xs text-slate-400">
-                Large format cinema sensors (ARRI, RED, Sony Venice) captured in uncompressed RAW formats.
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "36px", marginTop: "40px" }}>
+            <div style={{ borderTop: "1px solid #74776e", paddingTop: "24px" }}>
+              <div style={{ font: "12px var(--mono)", color: "#888", marginBottom: "8px" }}>PRINCIPLE // 01</div>
+              <h3 style={{ fontFamily: "var(--sans)", fontSize: "22px", marginBottom: "10px" }}>Zero Cheap Compromise</h3>
+              <p style={{ fontSize: "14px", color: "#4a4d46", lineHeight: "1.8" }}>
+                We do not shoot on convenience gear or accept superficial cuts. We use DCI 4K/8K cinema sensors, optical anamorphic glass, and certified Dolby mastering.
               </p>
             </div>
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-              <span className="text-xs font-mono text-amber-400">02 / COLOR</span>
-              <h4 className="font-heading font-semibold text-white">ACES DCI-P3 & HDR10</h4>
-              <p className="text-xs text-slate-400">
-                Academy Color Encoding System workflow with calibrated OLED reference monitors.
+
+            <div style={{ borderTop: "1px solid #74776e", paddingTop: "24px" }}>
+              <div style={{ font: "12px var(--mono)", color: "#888", marginBottom: "8px" }}>PRINCIPLE // 02</div>
+              <h3 style={{ fontFamily: "var(--sans)", fontSize: "22px", marginBottom: "10px" }}>Quantitative Attribution</h3>
+              <p style={{ fontSize: "14px", color: "#4a4d46", lineHeight: "1.8" }}>
+                Every pound, dollar, and dirham spent on programmatic media buying must return transparent audience intelligence, verified impressions, and measurable commercial lift.
               </p>
             </div>
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-              <span className="text-xs font-mono text-amber-400">03 / AUDIO</span>
-              <h4 className="font-heading font-semibold text-white">Dolby Atmos & EBU R128</h4>
-              <p className="text-xs text-slate-400">
-                Spatial surround audio mixing compliant with international broadcast loudness regulations.
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-              <span className="text-xs font-mono text-amber-400">04 / BROADCAST</span>
-              <h4 className="font-heading font-semibold text-white">Zero-Latency Ku-Band</h4>
-              <p className="text-xs text-slate-400">
-                Redundant satellite and low-latency WebRTC streams for global stadium and hybrid summit feeds.
+
+            <div style={{ borderTop: "1px solid #74776e", paddingTop: "24px" }}>
+              <div style={{ font: "12px var(--mono)", color: "#888", marginBottom: "8px" }}>PRINCIPLE // 03</div>
+              <h3 style={{ fontFamily: "var(--sans)", fontSize: "22px", marginBottom: "10px" }}>Discretion & Boardroom Trust</h3>
+              <p style={{ fontSize: "14px", color: "#4a4d46", lineHeight: "1.8" }}>
+                We operate under strict institutional NDA. When managing sensitive reputational matters or high-stakes acquisitions, discretion is our absolute currency.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
+      {/* GLOBAL FOOTPRINT */}
+      <section className="wrap section" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "60px", alignItems: "center" }}>
+          <figure className="process-detail" style={{ margin: 0 }}>
+            <Image
+              src="/assets/boardroom-presentation.jpg"
+              alt="ORBITZ Strategic Boardroom"
+              width={750}
+              height={450}
+              style={{ width: "100%", height: "360px", objectFit: "cover" }}
+            />
+            <figcaption>GLOBAL ADVISORY DESK // MAYFAIR • DIFC • VICTORIA ISLAND</figcaption>
+          </figure>
 
-      {/* Bottom CTA */}
-      <div className="max-w-4xl mx-auto w-full mt-24 text-center p-8 sm:p-12 glass-panel-glow rounded-3xl border border-white/15 space-y-5">
-        <WhiteLogoBadge size="sm" showText={true} />
-        <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
-          Begin Your Partnership with ORBITZ
-        </h3>
-        <p className="text-slate-300 text-sm max-w-lg mx-auto">
-          Our senior partners and production directors are ready to discuss your strategic media objectives.
-        </p>
-        <Link
-          href="/inquiry"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-amber-400 text-slate-950 font-heading font-bold text-sm hover:bg-amber-300 transition-colors shadow-lg shadow-amber-500/25"
-        >
-          <span>Initiate Commission Inquiry</span>
-          <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </div>
-
+          <div>
+            <p className="eyebrow">
+              <span>03 // GEOGRAPHY</span>
+              CROSS-BORDER REACH
+            </p>
+            <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(30px, 3.6vw, 46px)" }}>
+              Operating Across Global Centers of Gravity
+            </h2>
+            <p style={{ color: "var(--muted)", fontSize: "15px", lineHeight: "1.8", marginBottom: "24px" }}>
+              From London Mayfair to Dubai DIFC, New York, and Lagos, our production fleet and media buying traders operate seamlessly across time zones to deliver uninterrupted broadcast excellence.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", font: "12px var(--mono)", color: "#c0c2bf", marginBottom: "32px" }}>
+              <div>• LONDON MAYFAIR // HQ</div>
+              <div>• DUBAI DIFC // EMIRATES DESK</div>
+              <div>• LAGOS // PRODUCTION LABS</div>
+              <div>• NEW YORK // SYNDICATION</div>
+            </div>
+            <Link className="button gold" href="/contact">
+              Contact Concierge <span>↗</span>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

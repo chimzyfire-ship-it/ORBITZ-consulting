@@ -1,21 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Film, 
-  TrendingUp, 
-  Radio, 
-  Calendar, 
-  ArrowUpRight, 
-  CheckCircle2, 
-  Award, 
-  BarChart3, 
-  Eye, 
-  Globe2 
-} from "lucide-react";
-import WhiteLogoBadge from "@/components/WhiteLogoBadge";
 
 export const metadata = {
-  title: "Selected Works & Production Case Studies | ORBITZ Consulting Ltd",
+  title: "Selected Works & Case Studies | ORBITZ Consulting Ltd",
   description: "Explore benchmark documentary productions, programmatic media buying campaigns, high-stakes PR, and broadcast-grade live events executed by ORBITZ Consulting Ltd.",
 };
 
@@ -92,140 +79,113 @@ const caseStudies = [
 
 export default function WorkPage() {
   return (
-    <div className="flex flex-col w-full bg-[#050811] text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
-      
+    <div style={{ background: "#080a0c", paddingBottom: "120px" }}>
       {/* Header */}
-      <div className="max-w-7xl mx-auto w-full mb-16 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-mono tracking-widest uppercase mb-2">
-          <span>Production Portfolio</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight">
-          Selected Works & Benchmark Proof
-        </h1>
-        <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg">
-          Excellence is non-negotiable. Explore how ORBITZ Consulting Ltd executes high-stakes documentary productions, programmatic ad blitzes, live events, and media defense.
+      <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
+        <p className="eyebrow" style={{ justifyContent: "center" }}>
+          <span>// 03</span>SELECTED ARCHIVE
         </p>
-      </div>
+        <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
+          Case Studies & Broadcast Deployments
+        </h1>
+        <p style={{ maxWidth: "620px", margin: "0 auto", fontSize: "16px", color: "var(--muted)", lineHeight: "1.7" }}>
+          A curated inspection of high-profile commissions where ORBITZ engineered cinematic prestige, mass audience acquisition, and boardroom outcomes.
+        </p>
+      </section>
 
-      {/* Case Studies Showcase */}
-      <div className="max-w-7xl mx-auto w-full space-y-24">
-        {caseStudies.map((cs, idx) => (
-          <div
-            key={cs.id}
-            className="glass-panel-elevated rounded-3xl overflow-hidden border border-white/10 p-6 sm:p-10 space-y-8"
+      {/* Case Studies */}
+      <div className="wrap" style={{ display: "flex", flexDirection: "column", gap: "90px" }}>
+        {caseStudies.map((study, idx) => (
+          <article
+            key={study.id}
+            style={{
+              borderTop: "1px solid var(--line)",
+              paddingTop: "60px",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "60px",
+              alignItems: "center",
+            }}
           >
-            {/* Top row */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-                  {cs.category} • Client: {cs.client}
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-heading font-bold text-white mt-1">
-                  {cs.title}
-                </h2>
+            {/* Copy Side */}
+            <div style={{ order: idx % 2 === 0 ? 1 : 2 }}>
+              <p className="eyebrow">
+                <span>// 0{idx + 1}</span>{study.category.toUpperCase()}
+              </p>
+              <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(28px, 3.5vw, 44px)", marginBottom: "14px" }}>
+                {study.title}
+              </h2>
+              <div style={{ font: "11px var(--mono)", color: "var(--gold-accent)", marginBottom: "20px" }}>
+                CLIENT: {study.client.toUpperCase()}
               </div>
-              <div className="flex items-center gap-3">
-                <Link
-                  href="/inquiry"
-                  className="px-5 py-2.5 rounded-full bg-amber-400 text-slate-950 font-heading font-bold text-xs sm:text-sm hover:bg-amber-300 transition-colors flex items-center gap-1.5"
-                >
-                  <span>Commission Similar Scope</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+              <p style={{ fontSize: "16px", lineHeight: "1.7", color: "#f7f5ef", marginBottom: "16px" }}>
+                {study.tagline}
+              </p>
+              <p style={{ fontSize: "14px", lineHeight: "1.8", color: "var(--muted)", marginBottom: "28px" }}>
+                {study.details}
+              </p>
 
-            {/* Visual Grid: Big Primary + Supporting Asset */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              <div className="lg:col-span-8 relative h-72 sm:h-[420px] rounded-2xl overflow-hidden border border-white/10">
-                <Image
-                  src={cs.image}
-                  alt={cs.title}
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white text-sm sm:text-base font-medium max-w-xl">
-                    {cs.tagline}
-                  </p>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4 relative h-64 sm:h-[420px] rounded-2xl overflow-hidden border border-white/10">
-                <Image
-                  src={cs.secondaryImage}
-                  alt={`${cs.title} Production Details`}
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono text-amber-300">
-                  BEHIND THE SCENES
-                </div>
-              </div>
-            </div>
-
-            {/* Narrative & Metrics */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
-              <div className="lg:col-span-7 space-y-4">
-                <h4 className="text-sm font-mono uppercase tracking-wider text-slate-400">
-                  Execution Brief & Strategic Impact
-                </h4>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  {cs.details}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {cs.specs.map((spec) => (
-                    <span
-                      key={spec}
-                      className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300"
-                    >
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {cs.metrics.map((m) => (
-                  <div
-                    key={m.label}
-                    className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-center flex flex-col justify-center"
-                  >
-                    <span className="text-xl sm:text-2xl font-heading font-extrabold text-amber-400">
+              {/* Metrics */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "32px", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "18px" }}>
+                {study.metrics.map((m, mIdx) => (
+                  <div key={mIdx}>
+                    <div style={{ font: "18px var(--serif)", fontWeight: 700, color: "var(--gold)" }}>
                       {m.val}
-                    </span>
-                    <span className="text-[11px] font-medium text-slate-400 mt-1 uppercase tracking-wider">
-                      {m.label}
-                    </span>
+                    </div>
+                    <div style={{ font: "9px var(--mono)", color: "#888", letterSpacing: "1px", marginTop: "4px" }}>
+                      {m.label.toUpperCase()}
+                    </div>
                   </div>
                 ))}
               </div>
+
+              <Link className="button" href="/inquiry">
+                Request Detailed Dossier <span>↗</span>
+              </Link>
             </div>
 
-          </div>
+            {/* Visual Side (Big & Borderless) */}
+            <div style={{ order: idx % 2 === 0 ? 2 : 1 }}>
+              <figure
+                className="hero-photo"
+                style={{
+                  transform: idx % 2 === 0 ? "rotate(2deg)" : "rotate(-2deg)",
+                  width: "100%",
+                  maxWidth: "540px",
+                  margin: "0 auto",
+                }}
+              >
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  width={800}
+                  height={1000}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+                <div className="portrait-caption">
+                  <span>ORBITZ ARCHIVE // {study.category.toUpperCase()}</span>
+                  <strong>{study.specs[0]}</strong>
+                </div>
+              </figure>
+            </div>
+          </article>
         ))}
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-4xl mx-auto w-full mt-24 text-center p-8 sm:p-12 glass-panel-glow rounded-3xl border border-white/15 space-y-5">
-        <WhiteLogoBadge size="sm" showText={true} />
-        <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
-          Have an Ambitious Production in Mind?
-        </h3>
-        <p className="text-slate-300 text-sm max-w-lg mx-auto">
-          From full feature documentary syndication to stadium-scale live broadcasts, our directors and producers are standing by.
-        </p>
-        <Link
-          href="/inquiry"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-amber-400 text-slate-950 font-heading font-bold text-sm hover:bg-amber-300 transition-colors shadow-lg shadow-amber-500/25"
-        >
-          <span>Submit Project Inquiry</span>
-          <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </div>
-
+      <section className="wrap" style={{ paddingTop: "90px", textAlign: "center" }}>
+        <div style={{ background: "#0d0f12", padding: "50px 30px", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "2px" }}>
+          <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(28px, 4vw, 44px)", marginBottom: "16px" }}>
+            Have a High-Stakes Project?
+          </h2>
+          <p style={{ color: "var(--muted)", maxWidth: "480px", margin: "0 auto 30px" }}>
+            Review your production timeline with our managing partners.
+          </p>
+          <Link className="button gold" href="/inquiry">
+            Start Interactive Inquiry <span>↗</span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
