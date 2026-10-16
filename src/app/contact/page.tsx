@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import confetti from "canvas-confetti";
+import ArrowIcon from "@/components/ArrowIcon";
 
 const globalDesks = [
   {
@@ -201,7 +202,7 @@ export default function ContactPage() {
                 style={{ width: "100%", background: "#080a0c", color: "#ffffff", justifyContent: "space-between", marginTop: "8px" }}
               >
                 <span>{submitting ? "TRANSMITTING..." : "DISPATCH DISPATCH TO PARTNERS"}</span>
-                <span style={{ color: "var(--gold-accent)" }}>↗</span>
+                <span style={{ color: "var(--gold-accent)" }}><ArrowIcon /></span>
               </button>
             </form>
           )}
@@ -258,7 +259,7 @@ export default function ContactPage() {
               Prefer to answer 2 quick multiple choice questions to configure a production quote?
             </p>
             <Link className="button gold small-button" href="/inquiry">
-              Launch 2-Question Scoping <span>↗</span>
+              Launch 2-Question Scoping <span><ArrowIcon /></span>
             </Link>
           </div>
         </div>

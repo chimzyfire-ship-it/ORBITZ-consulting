@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import InteractiveInquiry from "@/components/InteractiveInquiry";
+import ArrowIcon from "@/components/ArrowIcon";
 
 export default function Home() {
   return (
@@ -20,10 +21,10 @@ export default function Home() {
           </p>
           <div className="hero-action">
             <Link className="button gold" href="/inquiry">
-              Commission Project <span>↗</span>
+              Commission Project <span><ArrowIcon /></span>
             </Link>
             <a className="hero-secondary" href="#practices">
-              Explore Enterprise Practices <span>↓</span>
+              Explore Enterprise Practices <span>{"\u2193\uFE0E"}</span>
             </a>
           </div>
           <div className="hero-details">
@@ -73,7 +74,7 @@ export default function Home() {
           <span>STRATEGIC PR & CRISIS ARCHITECTURE</span>
           <span>LIVE BROADCAST & EVENT EXPERIENCES</span>
           <Link href="/work">
-            View Selected Works <span>↗</span>
+            View Selected Works <span><ArrowIcon /></span>
           </Link>
         </div>
       </div>
@@ -105,7 +106,7 @@ export default function Home() {
             Traditional agencies create transient content. We build narrative ecosystems that seize global attention, withstand scrutiny, and produce tangible institutional value for sovereigns, corporations, and cultural leaders.
           </p>
           <Link className="button" href="/about">
-            The Firm Philosophy <span>↗</span>
+            The Firm Philosophy <span><ArrowIcon /></span>
           </Link>
         </div>
       </section>
@@ -154,7 +155,7 @@ export default function Home() {
 
           <div style={{ marginTop: "40px" }}>
             <Link className="text-link" href="/services">
-              Review all enterprise practice areas <span>→</span>
+              Review all enterprise practice areas <span>{"\u2192\uFE0E"}</span>
             </Link>
           </div>
         </div>
@@ -290,7 +291,7 @@ export default function Home() {
               <span>EXECUTIVE ADVISORY</span>
             </div>
             <Link className="button" href="/inquiry">
-              Initiate Partnership <span>↗</span>
+              Initiate Partnership <span><ArrowIcon /></span>
             </Link>
           </div>
 
@@ -355,7 +356,7 @@ export default function Home() {
               <span>24-HOUR QUOTE SLA</span>
             </div>
             <Link className="button gold" href="/inquiry">
-              Full Screen Commission Brief <span>↗</span>
+              Full Screen Commission Brief <span><ArrowIcon /></span>
             </Link>
           </div>
 
@@ -381,7 +382,7 @@ export default function Home() {
             <small>LONDON • DUBAI • NEW YORK • LAGOS // WORLDWIDE PRODUCTION FLEET</small>
           </div>
           <Link className="button" href="/inquiry">
-            Commission Project <span>↗</span>
+            Commission Project <span><ArrowIcon /></span>
           </Link>
         </div>
       </section>

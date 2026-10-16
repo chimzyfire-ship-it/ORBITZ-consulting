@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ArrowIcon from "./ArrowIcon";
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
@@ -62,12 +63,15 @@ export default function SplashScreen() {
         />
       </div>
 
-      {/* Top minimal bar */}
+      {/* Top minimal bar (responsive, never overflows mobile) */}
       <div className="intro-top">
-        <span style={{ color: "var(--gold-accent)", letterSpacing: "2px" }}>
+        <span className="hidden sm:inline" style={{ color: "var(--gold-accent)", letterSpacing: "2px" }}>
           MMXXIV • STRATEGIC MEDIA & CINEMATIC ADVISORY
         </span>
-        <span style={{ color: "#0ea5e9", letterSpacing: "1.5px" }}>
+        <span className="sm:hidden" style={{ color: "var(--gold-accent)", letterSpacing: "1px", fontSize: "9px" }}>
+          STRATEGIC MEDIA & ADVISORY
+        </span>
+        <span style={{ color: "#0ea5e9", letterSpacing: "1px", fontSize: "9px" }}>
           UK • UAE • US • AF
         </span>
       </div>
@@ -111,7 +115,7 @@ export default function SplashScreen() {
         </h1>
       </div>
 
-      {/* Bottom Bar: Enter the studio interaction */}
+      {/* Bottom Bar: Enter the studio interaction with vector ArrowIcon */}
       <div className="intro-bottom" style={{ justifyContent: "center" }}>
         <button
           type="button"
@@ -123,7 +127,7 @@ export default function SplashScreen() {
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.4)",
           }}
         >
-          Enter the studio <span>↗</span>
+          Enter the studio <span><ArrowIcon /></span>
         </button>
       </div>
     </aside>

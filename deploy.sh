@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-echo "📦 Staging and pushing logo & splash screen enhancements to GitHub..."
+echo "📦 Staging and pushing mobile optimization and vector arrow fixes to GitHub..."
 git add -A
-git commit -m "feat: enhance logo sizing, royal blue and gold accents, and center logo animation in splash screen" || true
+git commit -m "fix(mobile): resolve horizontal overflow and right skew on mobile screens, eliminate iOS emoji arrow rendering with crisp vector ArrowIcon, preserve desktop view 100%" || true
 git push origin main || true
 
 echo "⚡ Force deploying to Vercel Production..."

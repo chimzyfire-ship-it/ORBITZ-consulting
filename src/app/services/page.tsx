@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ArrowIcon from "@/components/ArrowIcon";
 
 export const metadata = {
   title: "Enterprise Practices & Capabilities | ORBITZ Consulting Ltd",
@@ -37,13 +38,13 @@ export default function ServicesPage() {
               We produce human-centered, investigative, and brand documentary masterpieces that command festival honors and mass audience devotion. From initial historical research and investigative journalism to 8K cinema filming and color grading, our productions are engineered to outlast the news cycle.
             </p>
             <div style={{ margin: "24px 0 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", font: "12px var(--mono)", color: "#c0c2bf" }}>
-              <div>↗ 8K DCI-P3 ACES WORKFLOW</div>
-              <div>↗ DOLBY ATMOS 7.1.4 MASTERING</div>
-              <div>↗ ARCHIVAL & INVESTIGATIVE RESEARCH</div>
-              <div>↗ FESTIVAL & THEATRICAL PACKAGING</div>
+              <div>{"\u2197\uFE0E"} 8K DCI-P3 ACES WORKFLOW</div>
+              <div>{"\u2197\uFE0E"} DOLBY ATMOS 7.1.4 MASTERING</div>
+              <div>{"\u2197\uFE0E"} ARCHIVAL & INVESTIGATIVE RESEARCH</div>
+              <div>{"\u2197\uFE0E"} FESTIVAL & THEATRICAL PACKAGING</div>
             </div>
             <Link className="button" href="/inquiry">
-              Commission Documentary <span>↗</span>
+              Commission Documentary <span><ArrowIcon /></span>
             </Link>
           </div>
 
@@ -90,13 +91,13 @@ export default function ServicesPage() {
                 Capital efficiency and guaranteed reach. We manage multi-million dollar ad allocations across Connected TV (CTV), programmatic real-time bidding DSPs, high-impact digital out-of-home (DOOH), and social video algorithms.
               </p>
               <div style={{ margin: "24px 0 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", font: "12px var(--mono)", color: "#333" }}>
-                <div>↗ DIRECT DSP BID ARBITRAGE</div>
-                <div>↗ CTV & BROADCAST LINEAR SPEND</div>
-                <div>↗ REAL-TIME ROAS ATTRIBUTION</div>
-                <div>↗ OMNICHANNEL DOOH TAKEOVERS</div>
+                <div>{"\u2197\uFE0E"} DIRECT DSP BID ARBITRAGE</div>
+                <div>{"\u2197\uFE0E"} CTV & BROADCAST LINEAR SPEND</div>
+                <div>{"\u2197\uFE0E"} REAL-TIME ROAS ATTRIBUTION</div>
+                <div>{"\u2197\uFE0E"} OMNICHANNEL DOOH TAKEOVERS</div>
               </div>
               <Link className="button" href="/inquiry">
-                Deploy Media Campaign <span>↗</span>
+                Deploy Media Campaign <span><ArrowIcon /></span>
               </Link>
             </div>
           </div>
@@ -118,13 +119,13 @@ export default function ServicesPage() {
               When reputation is everything, ORBITZ commands the narrative. We place founders, ministers, and enterprise executives across Tier-1 media (Bloomberg, Financial Times, Reuters, Forbes) while neutralizing hostile media cycles through rapid-response war rooms.
             </p>
             <div style={{ margin: "24px 0 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", font: "12px var(--mono)", color: "#c0c2bf" }}>
-              <div>↗ TIER-1 GLOBAL PRESS PLACEMENT</div>
-              <div>↗ 24/7 CRISIS WAR ROOM PROTOCOL</div>
-              <div>↗ EXECUTIVE THOUGHT LEADERSHIP</div>
-              <div>↗ REGULATORY & INVESTOR COMMS</div>
+              <div>{"\u2197\uFE0E"} TIER-1 GLOBAL PRESS PLACEMENT</div>
+              <div>{"\u2197\uFE0E"} 24/7 CRISIS WAR ROOM PROTOCOL</div>
+              <div>{"\u2197\uFE0E"} EXECUTIVE THOUGHT LEADERSHIP</div>
+              <div>{"\u2197\uFE0E"} REGULATORY & INVESTOR COMMS</div>
             </div>
             <Link className="button" href="/inquiry">
-              Retain PR Counsel <span>↗</span>
+              Retain PR Counsel <span><ArrowIcon /></span>
             </Link>
           </div>
 
@@ -169,13 +170,13 @@ export default function ServicesPage() {
               We transform corporate conventions, presidential summits, and brand unveilings into high-fidelity broadcast spectacles. Turnkey multi-camera OB trucks, satellite uplinks, immersive LED staging, and flawless live streaming to millions globally.
             </p>
             <div style={{ margin: "24px 0 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", font: "12px var(--mono)", color: "#c0c2bf" }}>
-              <div>↗ MULTI-CAMERA 4K OB TRUCKS</div>
-              <div>↗ SATELLITE & ENCRYPTED UPLINKS</div>
-              <div>↗ KEYNOTE AUDIO & SPATIAL STAGING</div>
-              <div>↗ 99.999% BROADCAST UPTIME SLA</div>
+              <div>{"\u2197\uFE0E"} MULTI-CAMERA 4K OB TRUCKS</div>
+              <div>{"\u2197\uFE0E"} SATELLITE & ENCRYPTED UPLINKS</div>
+              <div>{"\u2197\uFE0E"} KEYNOTE AUDIO & SPATIAL STAGING</div>
+              <div>{"\u2197\uFE0E"} 99.999% BROADCAST UPTIME SLA</div>
             </div>
             <Link className="button gold" href="/inquiry">
-              Book Event Broadcast <span>↗</span>
+              Book Event Broadcast <span><ArrowIcon /></span>
             </Link>
           </div>
         </div>
@@ -191,7 +192,7 @@ export default function ServicesPage() {
             Complete our 2-question intake protocol to reserve production capacity for your upcoming initiative.
           </p>
           <Link className="button gold" href="/inquiry">
-            Start Interactive Inquiry <span>↗</span>
+            Start Interactive Inquiry <span><ArrowIcon /></span>
           </Link>
         </div>
       </section>

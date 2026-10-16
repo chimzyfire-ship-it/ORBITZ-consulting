@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ArrowIcon from "@/components/ArrowIcon";
 
 export const metadata = {
   title: "About the Firm & Leadership | ORBITZ Consulting Ltd",
@@ -41,7 +42,7 @@ export default function AboutPage() {
               ORBITZ Consulting Ltd was founded to resolve this divide. We refuse to treat documentaries merely as marketing collateral, and we refuse to treat media buying as vanity reach. We build films that move human hearts and ad campaigns that capture tangible market share.
             </p>
             <Link className="button" href="/services">
-              Explore Enterprise Practices <span>↗</span>
+              Explore Enterprise Practices <span><ArrowIcon /></span>
             </Link>
           </div>
 
@@ -136,7 +137,7 @@ export default function AboutPage() {
               <div>• NEW YORK // SYNDICATION</div>
             </div>
             <Link className="button gold" href="/contact">
-              Contact Concierge <span>↗</span>
+              Contact Concierge <span><ArrowIcon /></span>
             </Link>
           </div>
         </div>

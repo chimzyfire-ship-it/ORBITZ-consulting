@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ArrowIcon from "./ArrowIcon";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,14 +49,14 @@ export default function Navbar() {
             Concierge
           </Link>
           <Link className="button small-button" href="/inquiry">
-            Start Inquiry <span>↗</span>
+            Start Inquiry <span><ArrowIcon /></span>
           </Link>
         </nav>
 
         {/* Mobile Hamburger Toggle */}
         <div className="flex md:hidden items-center gap-3">
-          <Link className="button small-button" href="/inquiry" style={{ padding: "8px 14px", minHeight: "36px", fontSize: "11px", gap: "10px" }}>
-            Inquire <span>↗</span>
+          <Link className="button small-button" href="/inquiry" style={{ padding: "8px 14px", minHeight: "36px", fontSize: "11px", gap: "8px" }}>
+            Inquire <span><ArrowIcon style={{ width: "11px", height: "11px" }} /></span>
           </Link>
           <button
             type="button"
@@ -153,7 +154,7 @@ export default function Navbar() {
             className="button"
             style={{ justifyContent: "center", marginTop: "10px" }}
           >
-            Start Inquiry <span>↗</span>
+            Start Inquiry <span><ArrowIcon /></span>
           </Link>
         </div>
       )}

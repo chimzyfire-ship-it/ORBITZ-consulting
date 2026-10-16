@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import confetti from "canvas-confetti";
+import ArrowIcon from "./ArrowIcon";
 
 interface QuestionOption {
   key: string;
@@ -234,7 +235,7 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
                     {opt.desc}
                   </div>
                 </div>
-                <span style={{ fontSize: "18px", color: "var(--gold-accent)" }}>→</span>
+                <span style={{ fontSize: "18px", color: "var(--gold-accent)" }}>{"\u2192\uFE0E"}</span>
               </button>
             ))}
           </div>
@@ -326,7 +327,7 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
                     {opt.desc}
                   </div>
                 </div>
-                <span style={{ fontSize: "18px", color: "var(--gold-accent)" }}>→</span>
+                <span style={{ fontSize: "18px", color: "var(--gold-accent)" }}>{"\u2192\uFE0E"}</span>
               </button>
             ))}
           </div>
@@ -519,7 +520,7 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
             }}
           >
             <span>{isSubmitting ? "TRANSMITTING BRIEF TO PARTNERS..." : "TRANSMIT COMMISSION BRIEF"}</span>
-            <span style={{ color: "var(--gold-accent)" }}>↗</span>
+            <span style={{ color: "var(--gold-accent)" }}><ArrowIcon /></span>
           </button>
         </form>
       )}

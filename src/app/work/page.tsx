@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ArrowIcon from "@/components/ArrowIcon";
 
 export const metadata = {
   title: "Selected Works & Case Studies | ORBITZ Consulting Ltd",
@@ -140,7 +141,7 @@ export default function WorkPage() {
               </div>
 
               <Link className="button" href="/inquiry">
-                Request Detailed Dossier <span>↗</span>
+                Request Detailed Dossier <span><ArrowIcon /></span>
               </Link>
             </div>
 
@@ -182,7 +183,7 @@ export default function WorkPage() {
             Review your production timeline with our managing partners.
           </p>
           <Link className="button gold" href="/inquiry">
-            Start Interactive Inquiry <span>↗</span>
+            Start Interactive Inquiry <span><ArrowIcon /></span>
           </Link>
         </div>
       </section>
