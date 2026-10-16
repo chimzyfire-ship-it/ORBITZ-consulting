@@ -3,7 +3,7 @@ set -e
 
 echo "📦 Staging and pushing full redesign to GitHub..."
 git add -A
-git commit -m "feat: complete redesign matching reference site with borderless assets, splash screen, and luxury editorial style" || true
+git commit -m "fix: resolve JSX style property syntax in Footer and deploy editorial redesign" || true
 git push origin main || true
 
 echo "⚡ Deploying to Vercel Production..."

@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div style={{ font: "10px var(--mono)", letter-spacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
+          <div style={{ font: "10px var(--mono)", letterSpacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
             The Practices
           </div>
           <div className="footer-links">
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <div style={{ font: "10px var(--mono)", letter-spacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
+          <div style={{ font: "10px var(--mono)", letterSpacing: "1.5px", color: "var(--gold-accent)", marginBottom: "18px", textTransform: "uppercase" }}>
             Operations & Desk
           </div>
           <div className="footer-links">
