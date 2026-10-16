@@ -11,7 +11,7 @@ export default function Footer() {
               className="brand-logo"
               src="/assets/logo.png"
               alt="ORBITZ Consulting Ltd"
-              style={{ width: "auto", height: "36px", objectFit: "contain" }}
+              style={{ width: "auto", height: "50px", objectFit: "contain" }}
             />
           </Link>
           <p style={{ marginTop: "24px", maxWidth: "340px", fontSize: "14px", lineHeight: "1.7", color: "var(--muted)" }}>

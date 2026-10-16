@@ -17,7 +17,7 @@ export default function Navbar() {
             className="brand-logo"
             src="/assets/logo.png"
             alt="ORBITZ Consulting Ltd"
-            style={{ width: "auto", height: "36px", objectFit: "contain" }}
+            style={{ width: "auto", height: "54px", objectFit: "contain" }}
           />
         </Link>
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-echo "📦 Staging and pushing full redesign to GitHub..."
+echo "📦 Staging and pushing logo & splash screen enhancements to GitHub..."
 git add -A
-git commit -m "fix: resolve JSX style property syntax in Footer and deploy editorial redesign" || true
+git commit -m "feat: enhance logo sizing, royal blue and gold accents, and center logo animation in splash screen" || true
 git push origin main || true
 
-echo "⚡ Deploying to Vercel Production..."
-vercel --prod --yes
+echo "⚡ Force deploying to Vercel Production..."
+vercel --prod --yes --force
 
 echo "🎉 Deployment complete!"
