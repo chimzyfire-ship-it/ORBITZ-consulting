@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050811;
+  --foreground: #f1f5f9;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050811;
+  color: #f1f5f9;
+}
+
+body {
+  background-color: #050811;
+  color: #f1f5f9;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #d4af37;
+  selection-color: #050811;
+}
+
+::selection {
+  background-color: rgba(212, 175, 55, 0.35);
+  color: #ffffff;
+}
+
+/* Glassmorphism utility layer */
+.glass-panel {
+  background: rgba(10, 17, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(14, 23, 52, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.05);
+}
+
+.glass-panel-glow {
+  background: linear-gradient(135deg, rgba(14, 23, 52, 0.8) 0%, rgba(8, 14, 32, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+.glass-panel-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(0, 180, 216, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* White logo background mandatory container */
+.white-logo-island {
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Cosmic background gradients */
+.bg-mesh-cosmic {
+  background-image: 
+    radial-gradient(at 10% 15%, rgba(0, 180, 216, 0.12) 0px, transparent 50%),
+    radial-gradient(at 90% 20%, rgba(212, 175, 55, 0.1) 0px, transparent 45%),
+    radial-gradient(at 50% 85%, rgba(10, 17, 40, 0.8) 0px, transparent 60%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA8C2C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #E0F2FE 0%, #38BDF8 50%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050811;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
