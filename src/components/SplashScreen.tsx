@@ -53,8 +53,8 @@ export default function SplashScreen() {
         <div className="intro-orbit orbit-two" />
         <img
           className="intro-photo intro-photo-one"
-          src="/assets/director-studio.jpg"
-          alt="Cinematic production set"
+          src="/assets/pexels-rabiu-kabir-32275124.jpg"
+          alt="Woman photographer with a camera in a studio"
         />
         <img
           className="intro-photo intro-photo-two"
@@ -78,13 +78,13 @@ export default function SplashScreen() {
 
       {/* Center Stage: Exclusively the LOGO and the BRAND NAME */}
       <div className="intro-centre">
-        {/* Sacred White Container with Royal Blue & Metallic Gold Aura */}
+        {/* Transparent artwork with a soft ivory spotlight */}
         <div className="intro-logo-pedestal">
           <Image
             src="/assets/logo.png"
             alt="ORBITZ Consulting Ltd Logo"
-            width={320}
-            height={130}
+            width={1277}
+            height={1232}
             priority
             className="intro-logo-img"
           />

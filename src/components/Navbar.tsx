@@ -12,13 +12,14 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <div className="wrap nav-shell">
-        {/* Sacred White Background Logo Island */}
+        {/* Transparent brand artwork over a feathered studio glow */}
         <Link className="brand" href="/" aria-label="ORBITZ Consulting Ltd">
           <img
             className="brand-logo"
             src="/assets/logo.png"
             alt="ORBITZ Consulting Ltd"
-            style={{ width: "auto", height: "54px", objectFit: "contain" }}
+            width={1277}
+            height={1232}
           />
         </Link>
 

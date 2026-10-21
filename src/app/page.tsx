@@ -40,16 +40,12 @@ export default function Home() {
           <div className="portrait-aura" />
           <figure className="hero-photo">
             <Image
-              src="/assets/director-studio.jpg"
-              alt="ORBITZ Director on set"
-              width={1122}
-              height={1402}
+              src="/assets/pexels-rabiu-kabir-32275124.jpg"
+              alt="Woman photographer looking through a camera in a warmly lit studio"
+              width={3926}
+              height={4908}
               priority
             />
-            <div className="portrait-caption">
-              <span>STUDIO RIG // ORBITZ 01</span>
-              <strong>Mastering Visual Gravity.</strong>
-            </div>
           </figure>
 
           {/* Overlapping Polaroid Card */}
