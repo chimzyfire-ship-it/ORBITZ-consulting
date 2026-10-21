@@ -50,7 +50,7 @@ export default function Footer() {
       </div>
 
       <div className="wrap footer-bottom">
-        <span>© 2026 ORBITZ CONSULTING LTD. ALL RIGHTS RESERVED.</span>
+        <span>© 2018 ORBITZ CONSULTING LTD. ALL RIGHTS RESERVED.</span>
         <div>
           <Link href="/contact">TERMS</Link>
           <Link href="/contact">PRIVACY</Link>
