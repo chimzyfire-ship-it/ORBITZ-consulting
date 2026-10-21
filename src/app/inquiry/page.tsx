@@ -1,5 +1,4 @@
 import InteractiveInquiry from "@/components/InteractiveInquiry";
-import Link from "next/link";
 
 export const metadata = {
   title: "Interactive Project Commission & Inquiry | ORBITZ Consulting Ltd",
@@ -14,7 +13,7 @@ export default function InquiryPage() {
         {/* Editorial Top Eyebrow */}
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <p className="eyebrow" style={{ justifyContent: "center" }}>
-            <span>// 06</span>INTAKE PROTOCOL
+            <span>{"// 06"}</span>INTAKE PROTOCOL
           </p>
           <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(36px, 4.5vw, 64px)", letterSpacing: "-.045em", marginBottom: "16px" }}>
             Commission a Strategic Project

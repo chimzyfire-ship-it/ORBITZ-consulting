@@ -13,7 +13,7 @@ export default function AboutPage() {
       {/* Header */}
       <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
         <p className="eyebrow" style={{ justifyContent: "center" }}>
-          <span>// 04</span>THE FIRM DOCTRINE
+          <span>{"// 04"}</span>THE FIRM DOCTRINE
         </p>
         <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           About ORBITZ Consulting Ltd
@@ -39,7 +39,7 @@ export default function AboutPage() {
               In an era of relentless algorithmic saturation, noise is cheap. True cultural gravity and institutional influence require two elements that rarely exist under one roof: <b>cinema-grade narrative craft</b> and <b>ruthless, programmatic media distribution</b>.
             </p>
             <p style={{ color: "var(--muted)", fontSize: "15px", lineHeight: "1.8", marginBottom: "28px" }}>
-              ORBITZ Consulting Ltd was founded to resolve this divide. We refuse to treat documentaries merely as marketing collateral, and we refuse to treat media buying as vanity reach. We build films that move human hearts and ad campaigns that capture tangible market share.
+              Established in 2018, ORBITZ Consulting Ltd builds on media consultancy and production work that began in the early 2000s under Stainless Media Productions. That experience continues to shape our documentary storytelling, strategic communications, and media production today.
             </p>
             <Link className="button" href="/services">
               Explore Enterprise Practices <span><ArrowIcon /></span>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <div className="section-heading horizontal">
             <div>
               <p className="eyebrow">
-                <span>// 02</span>OPERATING DOCTRINE
+                <span>{"// 02"}</span>OPERATING DOCTRINE
               </p>
               <h2>The Principles That Govern Our Craft</h2>
             </div>
@@ -108,13 +108,13 @@ export default function AboutPage() {
       {/* GLOBAL FOOTPRINT */}
       <section className="wrap section" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "60px", alignItems: "center" }}>
-          <figure className="process-detail" style={{ margin: 0 }}>
+          <figure className="process-detail process-team" style={{ margin: 0 }}>
             <Image
-              src="/assets/boardroom-presentation.jpg"
-              alt="ORBITZ Strategic Boardroom"
-              width={750}
-              height={450}
-              style={{ width: "100%", height: "360px", objectFit: "cover" }}
+              src="/assets/strategy-team-pexels-6803529.jpg"
+              alt="Team discussing a project plan beside a whiteboard"
+              width={1800}
+              height={1200}
+              sizes="(max-width: 900px) 100vw, 50vw"
             />
             <figcaption>GLOBAL ADVISORY DESK // MAYFAIR • DIFC • VICTORIA ISLAND</figcaption>
           </figure>

@@ -13,7 +13,7 @@ export default function ServicesPage() {
       {/* Top Header */}
       <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
         <p className="eyebrow" style={{ justifyContent: "center" }}>
-          <span>// 02</span>CORE PRACTICES
+          <span>{"// 02"}</span>CORE PRACTICES
         </p>
         <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           Specialized Media Practices & Execution

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import confetti from "canvas-confetti";
 import ArrowIcon from "@/components/ArrowIcon";
+import { submitInquiry } from "@/lib/submit-inquiry";
 
 const globalDesks = [
   {
@@ -44,18 +45,28 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "Media Inquiry",
+    subject: "General Concierge",
     desk: "London",
     message: "",
   });
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitError("");
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitInquiry({
+        source: "contact",
+        name: formData.name,
+        email: formData.email,
+        objective: formData.subject,
+        desk: formData.desk,
+        notes: formData.message,
+      });
       setSent(true);
       try {
         confetti({
@@ -63,8 +74,14 @@ export default function ContactPage() {
           spread: 60,
           colors: ["#d4af37", "#ffffff", "#080a0c"],
         });
-      } catch (err) {}
-    }, 500);
+      } catch {
+        // The message is already sent if the optional animation is unavailable.
+      }
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Your message could not be sent. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -72,7 +89,7 @@ export default function ContactPage() {
       {/* Header */}
       <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
         <p className="eyebrow" style={{ justifyContent: "center" }}>
-          <span>// 05</span>GLOBAL DESK
+          <span>{"// 05"}</span>GLOBAL DESK
         </p>
         <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           Connect with ORBITZ Concierge
@@ -106,7 +123,7 @@ export default function ContactPage() {
                 Transmission Received
               </h3>
               <p style={{ color: "#555", fontSize: "14px", marginBottom: "20px" }}>
-                Our senior coordinator will reply within 4 business hours.
+                Your message has been sent to the ORBITZ team. We will reply to your email as soon as possible.
               </p>
               <button
                 type="button"
@@ -195,13 +212,18 @@ export default function ContactPage() {
                 />
               </div>
 
+              {submitError && (
+                <p role="alert" style={{ color: "#a32222", fontSize: "14px", margin: 0 }}>
+                  {submitError}
+                </p>
+              )}
               <button
                 type="submit"
                 disabled={submitting}
                 className="button"
                 style={{ width: "100%", background: "#080a0c", color: "#ffffff", justifyContent: "space-between", marginTop: "8px" }}
               >
-                <span>{submitting ? "TRANSMITTING..." : "DISPATCH DISPATCH TO PARTNERS"}</span>
+                <span>{submitting ? "SENDING..." : "SEND MESSAGE"}</span>
                 <span style={{ color: "var(--gold-accent)" }}><ArrowIcon /></span>
               </button>
             </form>
@@ -212,7 +234,7 @@ export default function ContactPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
           <div>
             <p className="eyebrow">
-              <span>// DIRECTORIES</span>
+              <span>{"// DIRECTORIES"}</span>
               GLOBAL HUBS
             </p>
             <h2 style={{ fontFamily: "var(--serif)", fontSize: "36px", marginBottom: "24px" }}>

@@ -788,7 +788,8 @@ nav > a:hover {
 .studio-scene figcaption {
   position: absolute;
   left: max(50px, calc((100vw - 1280px)/2));
-  bottom: 65px;
+  right: 50px;
+  bottom: 48px;
   z-index: 2;
   pointer-events: none;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
@@ -802,11 +803,14 @@ nav > a:hover {
 }
 
 .studio-caption {
+  display: block;
+  max-width: 24ch;
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(42px, 5.5vw, 84px);
-  line-height: 1.06;
-  letter-spacing: -.05em;
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+  text-wrap: balance;
 }
 
 .studio-caption em {
@@ -838,6 +842,13 @@ nav > a:hover {
   height: 280px;
   object-fit: cover;
   object-position: center 80%;
+}
+
+.process-detail.process-team img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .process-detail figcaption {
@@ -1406,7 +1417,9 @@ nav > a:hover {
   .division { grid-template-columns: 1fr; gap: 24px; }
   .studio-scene { overflow: hidden; max-height: 70vh; }
   .studio-scene figcaption { left: 16px; right: 16px; bottom: 24px; }
-  .studio-caption { font-size: clamp(26px, 7vw, 38px); }
+  .studio-caption { font-size: clamp(22px, 5.3vw, 28px); }
+  .studio-kicker { font-size: 8px; line-height: 1.5; letter-spacing: .12em; margin-bottom: 12px; }
+  .studio-small { font-size: 8px; line-height: 1.5; letter-spacing: .08em; margin-top: 14px; }
   .process-detail { margin: 20px 0 0; }
   .process-detail img { height: 200px; }
   .partnership-ledger article { grid-template-columns: 45px 1fr; gap: 14px; padding: 20px 0; }
