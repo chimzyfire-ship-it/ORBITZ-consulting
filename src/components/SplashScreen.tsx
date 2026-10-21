@@ -66,7 +66,7 @@ export default function SplashScreen() {
       {/* Top minimal bar (responsive, never overflows mobile) */}
       <div className="intro-top">
         <span className="hidden sm:inline" style={{ color: "var(--gold-accent)", letterSpacing: "2px" }}>
-          MMXXIV • STRATEGIC MEDIA & CINEMATIC ADVISORY
+          EST. 2018 • STRATEGIC MEDIA & CINEMATIC ADVISORY
         </span>
         <span className="sm:hidden" style={{ color: "var(--gold-accent)", letterSpacing: "1px", fontSize: "9px" }}>
           STRATEGIC MEDIA & ADVISORY
