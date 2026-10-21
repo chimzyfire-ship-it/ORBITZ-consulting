@@ -3,6 +3,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import ArrowIcon from "./ArrowIcon";
+import { submitInquiry } from "@/lib/submit-inquiry";
 
 interface QuestionOption {
   key: string;
@@ -79,6 +80,7 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [ticketId, setTicketId] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   const handleSelectPillar = (opt: QuestionOption) => {
     setSelectedPillar(opt);
@@ -92,22 +94,22 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setSubmitError("");
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          pillar: selectedPillar?.title,
-          timeline: selectedTimeline?.title,
-          ...formData,
-        }),
+      const confirmedTicketId = await submitInquiry({
+        source: "inquiry",
+        objective: selectedPillar?.title,
+        timeline: selectedTimeline?.title,
+        name: formData.fullName,
+        email: formData.workEmail,
+        organization: formData.organization,
+        budget: formData.budget,
+        notes: formData.notes,
       });
-
-      const data = await res.json();
-      const generatedId = data.ticketId || `ORB-${Math.floor(100000 + Math.random() * 900000)}`;
-      setTicketId(generatedId);
+      setTicketId(confirmedTicketId);
       setStep(4);
 
       try {
@@ -117,19 +119,19 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
           origin: { y: 0.6 },
           colors: ["#d4af37", "#ffffff", "#080a0c"],
         });
-      } catch (err) {
+      } catch {
         // Safe confetti fallback
       }
-    } catch (err) {
-      // Local fallback on network error
-      setTicketId(`ORB-${Math.floor(100000 + Math.random() * 900000)}`);
-      setStep(4);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Your message could not be sent. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const resetQuiz = () => {
+    setSubmitError("");
+    setTicketId("");
     setSelectedPillar(null);
     setSelectedTimeline(null);
     setStep(1);
@@ -507,6 +509,11 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
             />
           </div>
 
+          {submitError && (
+            <p role="alert" style={{ color: "#a32222", fontSize: "14px", marginBottom: "16px" }}>
+              {submitError}
+            </p>
+          )}
           <button
             type="submit"
             disabled={isSubmitting}
@@ -547,7 +554,7 @@ export default function InteractiveInquiry({ isStandAlone = false }: { isStandAl
             Commission Protocol Initiated
           </h2>
           <p style={{ color: "#4a4d46", fontSize: "16px", maxWidth: "480px", margin: "0 auto 28px", lineHeight: "1.7" }}>
-            Thank you, <b>{formData.fullName}</b>. Your brief has been routed to the ORBITZ Managing Partner desk. A senior producer will reach out within 4 business hours.
+            Thank you, <b>{formData.fullName}</b>. Your brief has been sent to the ORBITZ team. We will reply to your email as soon as possible.
           </p>
 
           <div

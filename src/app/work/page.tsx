@@ -84,7 +84,7 @@ export default function WorkPage() {
       {/* Header */}
       <section className="wrap" style={{ paddingTop: "80px", paddingBottom: "60px", textAlign: "center" }}>
         <p className="eyebrow" style={{ justifyContent: "center" }}>
-          <span>// 03</span>SELECTED ARCHIVE
+          <span>{"// 03"}</span>SELECTED ARCHIVE
         </p>
         <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 5.5vw, 76px)", letterSpacing: "-.045em", marginBottom: "20px" }}>
           Case Studies & Broadcast Deployments
@@ -111,7 +111,7 @@ export default function WorkPage() {
             {/* Copy Side */}
             <div style={{ order: idx % 2 === 0 ? 1 : 2 }}>
               <p className="eyebrow">
-                <span>// 0{idx + 1}</span>{study.category.toUpperCase()}
+                <span>{"// 0"}{idx + 1}</span>{study.category.toUpperCase()}
               </p>
               <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(28px, 3.5vw, 44px)", marginBottom: "14px" }}>
                 {study.title}

@@ -10,8 +10,8 @@ export default function Home() {
       <section className="hero hero-immersive founder-hero" aria-label="Hero Introduction">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span>ORBITZ CONSULTING LTD // 2026</span>
-            EST. MMXXIV • STRATEGIC MEDIA & CINEMATIC PRODUCTION
+            <span>ORBITZ CONSULTING LTD // EST. 2018</span>
+            STRATEGIC MEDIA & CINEMATIC PRODUCTION
           </p>
           <h1>
             Where Cinematic Storytelling Meets <em>Calculated Media Power.</em>
@@ -92,7 +92,7 @@ export default function Home() {
 
         <div>
           <p className="eyebrow">
-            <span>// 01</span>THE ORBITZ DOCTRINE
+            <span>{"// 01"}</span>THE ORBITZ DOCTRINE
           </p>
           <h2>We Don&apos;t Just Produce Media. We Engineer Cultural Gravity.</h2>
           <p className="large-copy">
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="section-heading horizontal">
             <div>
               <p className="eyebrow">
-                <span>// 02</span>EXECUTIVE CAPABILITIES
+                <span>{"// 02"}</span>EXECUTIVE CAPABILITIES
               </p>
               <h2>Designed for Sovereign Brands and Global Leaders</h2>
             </div>
@@ -192,18 +192,19 @@ export default function Home() {
       <section className="wrap section process-section" id="process" aria-label="The Orbit Method">
         <div>
           <p className="eyebrow">
-            <span>// 04</span>THE ORBIT METHOD
+            <span>{"// 04"}</span>THE ORBIT METHOD
           </p>
           <h2>The Architecture of Precision Execution</h2>
           <p className="muted">
             Every project follows a battle-tested protocol honed across hundreds of high-stakes hours on set, in war rooms, and on broadcast airwaves.
           </p>
-          <figure className="process-detail">
+          <figure className="process-detail process-team">
             <Image
-              src="/assets/boardroom-presentation.jpg"
-              alt="Boardroom strategy presentation"
-              width={800}
-              height={500}
+              src="/assets/strategy-team-pexels-6803529.jpg"
+              alt="Production team planning a project around a meeting table and whiteboard"
+              width={1800}
+              height={1200}
+              sizes="(max-width: 900px) 100vw, 50vw"
             />
             <figcaption>PHASE 01-04 // STRATEGIC ALIGNMENT & BOARDROOM ROLLOUT</figcaption>
           </figure>
@@ -273,7 +274,7 @@ export default function Home() {
         <div className="wrap offer-layout">
           <div>
             <p className="eyebrow">
-              <span>// 05</span>WHAT WE OFFER
+              <span>{"// 05"}</span>WHAT WE OFFER
             </p>
             <h2>Turnkey Media Consultancy & Production</h2>
             <p>
@@ -340,7 +341,7 @@ export default function Home() {
         <div className="wrap invite-grid">
           <div>
             <p className="eyebrow">
-              <span>// 06</span>PROJECT INTAKE
+              <span>{"// 06"}</span>PROJECT INTAKE
             </p>
             <h2>Ready to Shape the Narrative?</h2>
             <p>

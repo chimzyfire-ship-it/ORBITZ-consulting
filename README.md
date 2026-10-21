@@ -1,3 +1,19 @@
+# ORBITZ Consulting
+
+## Enquiry email setup
+
+Both forms use `/api/inquiry`. Configure these server-only variables in Vercel Production, then redeploy:
+
+- `RESEND_API_KEY`: an API key authorized to send mail.
+- `INQUIRY_FROM_EMAIL`: a sender address on a domain verified in Resend.
+- `INQUIRY_TO_EMAIL`: the owner's destination inbox (to be supplied later).
+
+See `.env.example` and [Resend's send-email documentation](https://resend.com/docs/api-reference/emails/send-email). The visitor's address is used as Reply-To. Recipients cannot be changed by form submissions.
+
+Until all three values are configured, submissions return 503 and the form keeps the visitor's input with a clear error. No submissions are stored or queued. Success is shown only after the mail provider accepts the email. After configuration, submit an enquiry and verify receipt in the destination inbox.
+
+Validation: `npm test`, `npx tsc --noEmit`, and `npm run build`.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
