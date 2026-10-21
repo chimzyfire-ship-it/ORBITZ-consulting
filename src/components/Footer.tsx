@@ -5,13 +5,14 @@ export default function Footer() {
     <footer className="footer" role="contentinfo">
       <div className="wrap footer-top">
         <div>
-          {/* Sacred White Background Logo Island */}
+          {/* Shared transparent brand treatment */}
           <Link className="brand" href="/" aria-label="ORBITZ Consulting Ltd">
             <img
               className="brand-logo"
               src="/assets/logo.png"
               alt="ORBITZ Consulting Ltd"
-              style={{ width: "auto", height: "50px", objectFit: "contain" }}
+              width={1277}
+              height={1232}
             />
           </Link>
           <p style={{ marginTop: "24px", maxWidth: "340px", fontSize: "14px", lineHeight: "1.7", color: "var(--muted)" }}>
